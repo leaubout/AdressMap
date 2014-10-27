@@ -8,7 +8,7 @@
 		<fieldset>
 			<!-- Form Name -->
 			<legend>Que désirez-vous faire ?</legend>
-
+			
 			<!-- Button -->
 			<div class="control-group">
 				<label class="control-label" for="create">Ajouter une adresse</label>

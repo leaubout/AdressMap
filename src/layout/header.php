@@ -11,8 +11,6 @@
         <link href="assets/bootflatv2/bootflat/css/bootflat.min.css" rel="stylesheet">
         <?php if(isset($afterBootstrap)) {echo $afterBootstrap;}?>
 
-        <link href="css/app.css" rel="stylesheet">
-
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
