@@ -1,0 +1,11 @@
+{
+    "name":"project-address-map",
+    "version" : "0.0.1",
+    "dependencies":{
+        "bootstrap" :">= 3.2.0",
+        "bootflatv2" :"master",
+        "fontawesome" :">= 4.2.0",
+        "html5shiv" :">=3.7.0",
+        "respond" : ">=1.4.2"
+                   }
+}
