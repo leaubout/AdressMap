@@ -1,8 +1,9 @@
         <?php
             if (isset($_POST['submit']) && $_POST['submit'] == 'create'){
+                $bool = FALSE;
                 require_once '../bdd/address.php';
                 //$dataClean = clean($_POST);
-                create($pdo, $_POST);
+                $bool = create($pdo, $_POST);
             }
             $afterBootstrap = '<link href="css/main.css" rel="stylesheet">';
             $title = "Saisie d'un nouveau contact";
@@ -14,7 +15,22 @@
         
         			<!-- Form Name -->
         			<legend>Saisie d'un contact</legend>
-        
+
+        			<!-- Alerts Div  -->
+                <?php if (isset($bool) && $bool == true){?>
+        			<div class="alert alert-success" role="alert">
+        			     <p>Le contact <?= $_POST['title'] . ", " . $_POST['description'] ?> a bien été créé<br>
+        			     avec l'adresse <?= $_POST['address'] ?><br>
+        			     et l'url <?= $_POST['url'] ?><br>
+        			     </p><br>
+        			     <a class="btn btn-info" href="http://www.project.dev/read.php">Voir les contacts déjà enregistrés</a>
+        			</div>          			       
+        		<?php } else if (isset($bool) && $bool == false){?>
+                    <div class="alert alert-warning" role="alert">
+            		      <p>Désolé, le contact <?= $_POST['title'] ?> n'a pas pu été créé<br></p>
+            		</div>        			             
+        		<?php }?>    
+        			
         			<!-- Text input-->
         			<div class="control-group">
         				<label class="control-label" for="title">Titre</label>

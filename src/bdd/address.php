@@ -17,22 +17,40 @@
         $data['url'] = $post['url'];
         
         $stmt = $pdo->prepare($sql);
-        $stmt->execute($data);
+        $bool = $stmt->execute($data);
+        return $bool;
     }
 
     function read($pdo){
-        $sql = "SELECT `id`, `address`, `title`, `description`, `url` FROM `address";
+        $sql = "SELECT `id`, `address`, `title`, `description`, `url` FROM `address`";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
-    function update($data){
+    function readOne($pdo, $id){
+        $sql = "SELECT `id`, `address`, `title`, `description`, `url` FROM `address` WHERE `id` = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(array('id' => $id));
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }    
     
+    // $data : les données ont déjà été nettoyées
+    function update($pdo, $data){       
+        $sql = "UPDATE `address` "
+            . "SET `address` = :address, `title` = :title, `description` = :description, `url` = :url "
+            . "WHERE `id` = :id";
+        $stmt = $pdo->prepare($sql);
+        $bool = $stmt->execute($data);
+        return $bool;
     }
     
-    function delete($data){
-        
+    function delete($pdo, $id){
+        $sql = "DELETE FROM `address` "
+                . "WHERE `id` = :id";
+        $stmt = $pdo->prepare($sql);
+        $bool = $stmt->execute(array('id' => $id));
+        return $bool;        
     }
     
     

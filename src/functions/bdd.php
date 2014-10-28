@@ -14,4 +14,14 @@
         return $connection;
     }
     
+    // fonction qui nettoie les données (pas encore fait) et qui renvoie le tableau de données bien formaté
+    function cleanData($data){
+        $dataClean = array();
+        $dataClean['id'] = $data['id'];
+        $dataClean['address'] = $data['address'];
+        $dataClean['title'] = $data['title'];
+        $dataClean['description'] = $data['description'];
+        $dataClean['url'] = $data['url'];
+        return $dataClean;
+    }
     
