@@ -2,8 +2,8 @@
             if (isset($_POST['submit']) && $_POST['submit'] == 'create'){
                 $bool = FALSE;
                 require_once '../bdd/address.php';
-                //$dataClean = clean($_POST);
-                $bool = create($pdo, $_POST);
+                $dataClean = cleanData($_POST);
+                $bool = create($pdo, $dataClean);
             }
             $afterBootstrap = '<link href="css/main.css" rel="stylesheet">';
             $title = "Saisie d'un nouveau contact";
@@ -19,9 +19,9 @@
         			<!-- Alerts Div  -->
                 <?php if (isset($bool) && $bool == true){?>
         			<div class="alert alert-success" role="alert">
-        			     <p>Le contact <?= $_POST['title'] . ", " . $_POST['description'] ?> a bien été créé<br>
-        			     avec l'adresse <?= $_POST['address'] ?><br>
-        			     et l'url <?= $_POST['url'] ?><br>
+        			     <p>Le contact <?= $_POST['title'] . ", " . $_POST['description'] . ',' ?> a bien été créé<br>
+        			     avec l'adresse : <?= $_POST['address'] ?><br>
+        			     et l'url : <?= $_POST['url'] ?>.<br>
         			     </p><br>
         			     <a class="btn btn-info" href="http://www.project.dev/read.php">Voir les contacts déjà enregistrés</a>
         			</div>          			       

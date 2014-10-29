@@ -6,18 +6,24 @@
         $pdo = connectDB();
     //}
 
-    function create($pdo, $post){    
+    /** enregistrement d'une nouvelle adresse dans la table address
+     * @param unknown $pdo : connexion PDO
+     * @param array $cleanData : données nettoyées et formatées pour la requête spécifiée dans la fonction
+     * @return boolean
+     */
+    function create($pdo, $cleanData){    
         $sql = "INSERT INTO `project`.`address` (`id`, `address`, `title`, `description` ,`url`) "
             . "VALUES (:id, :address, :title, :description, :url)";
+        /*
         $data = array();
         $data['id'] = NULL;
         $data['address'] = $post['address'];
         $data['title'] = $post['title'];
         $data['description'] = $post['description'];
         $data['url'] = $post['url'];
-        
+        */
         $stmt = $pdo->prepare($sql);
-        $bool = $stmt->execute($data);
+        $bool = $stmt->execute($cleanData);
         return $bool;
     }
 

@@ -15,9 +15,14 @@
     }
     
     // fonction qui nettoie les données (pas encore fait) et qui renvoie le tableau de données bien formaté
+    // pour la création et pour la modification d'adresses
     function cleanData($data){
         $dataClean = array();
-        $dataClean['id'] = $data['id'];
+        if (isset($data['id'])){
+            $dataClean['id'] = $data['id'];
+        }else{
+            $dataClean['id'] = NULL;
+        }
         $dataClean['address'] = $data['address'];
         $dataClean['title'] = $data['title'];
         $dataClean['description'] = $data['description'];
@@ -25,3 +30,18 @@
         return $dataClean;
     }
     
+    function cleanImportData($data){
+        $dataClean = array();
+        // pour une adresse à modifier
+        if (isset($data['id'])){
+            $dataClean['id'] = $data['id'];
+        // pour une adresse à créer
+        }else{
+            $dataClean['id'] = NULL;
+        }
+        $dataClean['address'] = $data['address'];
+        $dataClean['title'] = $data['title'];
+        $dataClean['description'] = $data['description'];
+        $dataClean['url'] = $data['url'];
+        return $dataClean;
+    }
