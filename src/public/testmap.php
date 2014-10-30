@@ -80,7 +80,6 @@
                 alert('Geocode was not successful for the following reason: ' + status);
               }
             });
-            //console.log(marker);
           }
 
            function initialize() {
@@ -92,10 +91,8 @@
 
               map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-              console.log("avant code address");console.log(marker);
               geocoder = new google.maps.Geocoder();
-              marker = codeAddress();
-              console.log("après code address");console.log(marker);
+              codeAddress();
            }
 
            google.maps.event.addDomListener(window, 'load', initialize);
