@@ -58,7 +58,7 @@
             			<div class="control-group">
             				<label class="control-label" for="title">Titre</label>
             				<div class="controls">
-            					<input id="title" name="title" type="text" class="input-xlarge" 
+            					<input id="title" name="title" type="text" class="form-control input-xlarge" 
             					   value="<?php if (isset($address)){
             					                   echo $address['title'];
             					                }?>" <?php if ($post) { echo "disabled";} ?> >
@@ -69,9 +69,10 @@
             			<div class="control-group">
             				<label class="control-label" for="address">Adresse</label>
             				<div class="controls">
-            					<textarea id="address" name="address" <?php if ($post) { echo "disabled";} ?> ><?php if (isset($address)){
+            					<textarea id="address" name="address" class="form-control" 
+            					   <?php if ($post) { echo "disabled";} ?>><?php if (isset($address)){
                                                                                 echo $address['address'];
-            					                                            }?>
+            					                                           }?>
             					</textarea>
             				</div>
             			</div><br>
@@ -80,7 +81,7 @@
             			<div class="control-group">
             				<label class="control-label" for="description">Description</label>
             				<div class="controls">
-            					<input id="description" name="description" type="text" class="input-xlarge"
+            					<input id="description" name="description" type="text" class="form-control input-xlarge"
             					   value="<?php if (isset($address)){
             					                   echo $address['description'];
             					                }?>" <?php if ($post) { echo "disabled";} ?>>
@@ -91,7 +92,7 @@
             			<div class="control-group">
             				<label class="control-label" for="url">URL</label>
             				<div class="controls">
-            					<input id="url" name="url" type="text" class="input-xlarge"
+            					<input id="url" name="url" type="text" class="form-control input-xlarge"
             					   value="<?php if (isset($address)){
             					                   echo $address['url'];
             					                }?>" <?php if ($post) { echo "disabled";} ?>>
@@ -106,7 +107,7 @@
             					<button id="submit" name="submit" value="delete" class="btn btn-success">Supprimer ce contact</button>
             			    <?php } else { ?>
             			         <a href="read.php" class="btn btn-success">Retourner à la liste des contacts</a>
-            			         <a href="index.php" class="btn btn-success">Retourner à l'index</a>
+            			         <a href="index.php" class="btn btn-success">Revenir à l'accueil</a>
             			    <?php } ?>
             				</div>
             			</div><br>

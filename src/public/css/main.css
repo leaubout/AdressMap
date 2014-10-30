@@ -1,5 +1,10 @@
+body{
+	background-image: url("/img/bg.jpg");
+	backgrount-image-repeat: no-repeat;
+}
+
 .content{
-	background-color: #DBDBDB;
+	background-color: #FFFFFF;
 	width: 40%;
 	margin: 50px auto;
 	padding: 50px;

@@ -36,7 +36,7 @@
         				<label class="control-label" for="title">Titre</label>
         				<div class="controls">
         					<input id="title" name="title" type="text"
-        						placeholder="Saisissez le titre" class="input-xlarge">
+        						placeholder="Saisissez le titre" class="form-control input-xlarge">
         				</div>
         			</div><br>
         
@@ -45,7 +45,7 @@
         				<label class="control-label" for="address">Adresse</label>
         				<div class="controls">
         					<textarea id="address" name="address"
-        						placeholder="Saisissez l'adresse"></textarea>
+        						placeholder="Saisissez l'adresse" class="form-control"></textarea>
         				</div>
         			</div><br>
         
@@ -54,7 +54,7 @@
         				<label class="control-label" for="description">Description</label>
         				<div class="controls">
         					<input id="description" name="description" type="text"
-        						placeholder="Saisissez la description" class="input-xlarge">
+        						placeholder="Saisissez la description" class="form-control input-xlarge">
         
         				</div>
         			</div><br>
@@ -64,7 +64,7 @@
         				<label class="control-label" for="url">URL</label>
         				<div class="controls">
         					<input id="url" name="url" type="text"
-        						placeholder="Saisissez l'adresse web" class="input-xlarge">
+        						placeholder="Saisissez l'adresse web" class="form-control input-xlarge">
         
         				</div>
         			</div><br>
@@ -80,6 +80,7 @@
         
         		</fieldset>
         	</form>
+        	<a href="index.php" class="btn btn-info">Revenir à l'accueil</a>
         </div>
 <?php
     require_once '../layout/footer.php';

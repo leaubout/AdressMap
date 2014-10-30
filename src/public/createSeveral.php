@@ -196,7 +196,7 @@
         			<!-- MAX_FILE_SIZE doit précéder le champ input de type file -->
                     <div class="control-group">
         				<div class="controls">
-                            <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+                            <input type="hidden" name="MAX_FILE_SIZE" value="30000"/>
                         </div>
                     </div> 
        
@@ -204,7 +204,7 @@
         			<div class="control-group">
         				<label class="control-label" for="inputFile">Fichier à importer</label>
         				<div class="controls">
-        					<input id="inputFile" name="inputFile" type="file">
+        					<input id="inputFile" name="inputFile" type="file" class="form-control">
         				</div>
         			</div>
         
@@ -220,7 +220,7 @@
         			</div>
         		</fieldset>
         	</form>
-        	<br>
+        	<br><br>
         	<a class="btn btn-info" href="index.php">Revenir à l'accueil</a>
         </div>
 <?php

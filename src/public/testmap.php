@@ -16,15 +16,6 @@
               height: 600px;
               margin: 50px auto;
             }
-
-            h4{
-              margin-top, margin-bottom: 3px;
-            }
-
-            p{
-              margin-top, margin-bottom: 2px;
-            }
-
         </style>
     </head>
     <body>
